@@ -17,11 +17,11 @@ app.use('/api', router);
 
 app.use(express.static(path.join(dirname, '/client/build')));
 app.get('*', (req, res) =>
-    res.sendFile(path.join(dirname, '/client/build/index.html'))
+  res.sendFile(path.join(dirname, '/client/build/index.html'))
 );
 
 app.use((err, req, res, next) => {
-    res.status(500).send({ message: err.message });
+  res.status(500).send({ message: err.message });
 });
 
 app.listen(port, () => console.log(`server ${port}`));
