@@ -3,9 +3,8 @@ const Db = process.env.DATABASE;
 mongoose.set('strictQuery', false);
 mongoose
   .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
+    useNewUrlParser: true,
   })
   .then(() => {
     console.log('connection successful');
